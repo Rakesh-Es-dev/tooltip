@@ -1,9 +1,3 @@
-.tooltipContainer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 .tooltipTarget {
   position: relative;
   color: white;
@@ -13,6 +7,7 @@
   width: 300px;
   text-align: center;
   cursor: pointer;
+  margin: auto;
 }
 .tooltipTarget div {
   color: white;
@@ -20,21 +15,17 @@
   padding: 10px;
   position: absolute;
   opacity: 0;
+  z-index: 999;
 }
-.tooltipTarget:hover div {
-  opacity: 1;
-}
-.tooltipTextTop {
-  top: -101%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.tooltipTextTop::before {
+.tooltipTarget div::before {
   content: "";
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   background: black;
   z-index: -1;
   transform: rotate(45deg);
+}
+.tooltipTarget:hover div {
+  opacity: 1;
 }
